@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flores Amarillas 💛</title>
+
+<style>
+    
+/* LUCIERNAGAS */
+
+.firefly{
+
+position:absolute;
+
+width:10px;
+height:10px;
+
+border-radius:50%;
+
+background:#ffff99;
+
+box-shadow:
+0 0 15px #ffff99,
+0 0 35px #ffff99,
+0 0 60px #ffff99;
+
+z-index:20;
+
+animation:
+brillar 3s ease-in-out infinite;
+
+}
+
+@keyframes brillar{
+
+0%,100%{
+opacity:.2;
+transform:scale(.6);
+}
+
+50%{
+opacity:1;
+transform:scale(1.4);
+}
+
+}
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+height:100vh;
+overflow:hidden;
+font-family:Arial,sans-serif;
+
+background:
+linear-gradient(
+180deg,
+#06153d 0%,
+#102862 50%,
+#17356d 100%
+);
+}
+
+/* LUNA */
+
+.moon{
+position:absolute;
+top:30px;
+right:40px;
+
+width:170px;
+height:170px;
+
+border-radius:50%;
+
+background:
+radial-gradient(
+circle at 35% 35%,
+#fffde4 0%,
+#fff7b0 30%,
+#ffe082 60%,
+#ffd54f 100%
+);
+
+box-shadow:
+0 0 40px #ffd54f,
+0 0 120px #ffd54f,
+0 0 250px rgba(255,213,79,.5),
+0 0 400px rgba(255,213,79,.2);
+
+animation:
+resplandor 5s ease-in-out infinite;
+}
+#musicBtn{
+
+position:fixed;
+
+top:20px;
+left:20px;
+
+padding:10px 18px;
+
+border:none;
+
+border-radius:20px;
+
+background:#FFD700;
+
+color:#000;
+
+font-weight:bold;
+
+cursor:pointer;
+
+z-index:9999;
+
+box-shadow:
+0 0 10px rgba(255,215,0,.6);
+
+}
+
+/* MENSAJE */
+
+.mensaje{
+
+position:absolute;
+
+top:42%;
+left:50%;
+
+transform:
+translate(-50%,-50%);
+
+width:70%;
+
+text-align:center;
+
+color:white;
+
+z-index:100;
+
+background:
+rgba(0,0,0,.08);
+
+padding:20px;
+
+border-radius:25px;
+
+backdrop-filter:
+blur(8px);
+
+}
+
+.mensaje h1{
+
+font-size:2.6rem;
+
+color:#FFD700;
+
+text-shadow:
+0 0 10px rgba(255,215,0,.5),
+0 0 20px rgba(255,215,0,.2),
+0 0 10px rgba(0,0,0,.8);
+
+margin-bottom:25px;
+
+}
+.mensaje p{
+
+font-size:1.5rem;
+
+line-height:1.7;
+
+text-shadow:
+0 0 8px rgba(0,0,0,.8);
+
+}
+.petal{
+
+position:absolute;
+
+font-size:28px;
+
+
+pointer-events:none;
+
+animation:
+caer linear forwards;
+
+}
+
+@keyframes caer{
+
+0%{
+transform:
+translateX(0)
+translateY(-50px)
+rotate(0deg);
+
+opacity:1;
+}
+
+50%{
+transform:
+translateX(50px)
+translateY(50vh)
+rotate(180deg);
+}
+
+100%{
+transform:
+translateX(-50px)
+translateY(110vh)
+rotate(360deg);
+
+opacity:0;
+}
+
+}
+
+/* ESTRELLAS */
+
+.star{
+
+position:absolute;
+
+border-radius:50%;
+
+background:#FFD700;
+
+box-shadow:
+0 0 8px #FFD700,
+0 0 15px #FFD700,
+0 0 25px rgba(255,215,0,.6);
+
+}
+
+/* CORAZONES */
+
+.heart{
+
+position:absolute;
+
+font-size:30px;
+filter:
+drop-shadow(0 0 10px #ff69b4)
+drop-shadow(0 0 20px #ff1493);
+
+z-index:999;
+
+pointer-events:none;
+
+animation:
+explode 2s forwards;
+}
+@keyframes resplandor{
+
+0%,100%{
+transform:scale(1);
+}
+
+50%{
+transform:scale(1.08);
+}
+
+}
+
+@keyframes explode{
+
+100%{
+
+opacity:0;
+
+transform:
+translate(
+var(--x),
+var(--y)
+)
+scale(2);
+
+}
+
+}
+
+
+.garden{
+
+position:absolute;
+
+bottom:0;
+
+left:0;
+
+width:100%;
+
+padding-bottom:15px;
+
+text-align:center;
+
+font-size:95px;
+
+z-index:10;
+
+background:
+linear-gradient(
+transparent,
+rgba(0,70,0,.5)
+);
+
+animation:
+mecer 2.5s ease-in-out infinite;
+}
+.fila{
+display:flex;
+justify-content:space-around;
+width:100%;
+background:
+linear-gradient(
+transparent,
+rgba(0,60,0,.15) 30%,
+rgba(0,90,0,.45) 100%
+);
+}
+
+.fondo{
+opacity:.35;
+transform:scale(.65);
+margin-bottom:-20px;
+animation:viento1 6s ease-in-out infinite;
+}
+
+.medio{
+opacity:.7;
+transform:scale(.85);
+margin-bottom:-10px;
+animation:viento2 4s ease-in-out infinite;
+}
+
+.frente{
+transform:scale(1);
+animation:viento3 3s ease-in-out infinite;
+}
+@keyframes twinkle{
+
+0%,100%{
+opacity:.2;
+}
+
+50%{
+opacity:1;
+}
+
+}
+@keyframes viento1{
+
+0%,100%{
+transform:scale(.65) translateX(0);
+}
+
+50%{
+transform:scale(.65) translateX(15px);
+}
+
+}
+.garden span{
+
+display:inline-block;
+
+animation:
+florRespira 3s
+ease-in-out
+infinite;
+
+}
+.moon-glow{
+
+position:absolute;
+
+top:-25px;
+right:-25px;
+
+width:260px;
+height:260px;
+
+border-radius:50%;
+
+background:
+radial-gradient(
+circle,
+rgba(255,213,79,.25),
+transparent 70%
+);
+
+pointer-events:none;
+
+animation:
+resplandor 5s ease-in-out infinite;
+
+}
+
+@keyframes florRespira{
+
+0%,100%{
+transform:scale(1);
+}
+
+50%{
+transform:scale(1.08);
+}
+
+}
+
+@keyframes viento2{
+
+0%,100%{
+transform:scale(.85) translateX(0);
+}
+
+50%{
+transform:scale(.85) translateX(-10px);
+}
+
+}
+
+@keyframes viento3{
+
+0%,100%{
+transform:scale(1) translateX(0);
+}
+
+50%{
+transform:scale(1) translateX(8px);
+}
+
+}
+@keyframes mecer{
+
+0%{
+transform:translateX(-5px);
+}
+
+50%{
+transform:translateX(5px);
+}
+
+100%{
+transform:translateX(-5px);
+}
+
+}
+
+
+
+
+@keyframes flotar{
+
+0%{
+transform:
+translate(-50%,-50%)
+translateY(0px);
+}
+
+50%{
+transform:
+translate(-50%,-50%)
+translateY(-10px);
+}
+
+100%{
+transform:
+translate(-50%,-50%)
+translateY(0px);
+}
+
+}
+
+
+
+
+</style>
+
+</head>
+
+<body>
+
+<div class="moon"></div>
+<div class="moon-glow"></div>
+<div class="garden">
+
+<div class="fila fondo">
+<span style="font-size:60px">🌷</span>
+<span style="font-size:70px">🌻</span>
+<span style="font-size:55px">🌷</span>
+<span style="font-size:80px">🌻</span>
+<span style="font-size:60px">🌷</span>
+<span style="font-size:75px">🌻</span>
+<span style="font-size:55px">🌷</span>
+</div>
+
+<div class="fila medio">
+<span style="font-size:85px">🌻</span>
+<span style="font-size:75px">🌷</span>
+<span style="font-size:90px">🌻</span>
+<span style="font-size:70px">🌷</span>
+<span style="font-size:85px">🌻</span>
+<span style="font-size:75px">🌷</span>
+<span style="font-size:90px">🌻</span>
+<span style="font-size:70px">🌷</span>
+</div>
+
+<div class="fila frente">
+<span style="font-size:115px">🌷</span>
+<span style="font-size:130px">🌻</span>
+<span style="font-size:110px">🌷</span>
+<span style="font-size:140px">🌻</span>
+<span style="font-size:120px">🌷</span>
+<span style="font-size:130px">🌻</span>
+<span style="font-size:115px">🌷</span>
+<span style="font-size:140px">🌻</span>
+<span style="font-size:120px">🌷</span>
+<span style="font-size:135px">🌻</span>
+</div>
+
+</div>
+
+<div class="mensaje">
+
+<h1>
+🌻 Te regalo estas flores amarillas 💛
+</h1>
+
+<p>
+Te regalo estas flores amarillas porque,
+incluso en los rincones más oscuros de mi mundo,
+tú eres esa pequeña luz que se niega a morir.
+✨🌙💛
+</p>
+
+</div>
+
+<script>
+
+/* ESTRELLAS */
+
+for(let i=0;i<200;i++){
+
+const star=
+document.createElement("div");
+
+star.className="star";
+
+let size=
+Math.random()*4+2;
+
+star.style.width=
+size+"px";
+
+star.style.height=
+size+"px";
+
+star.style.left=
+Math.random()*100+"vw";
+
+star.style.top=
+Math.random()*100+"vh";
+star.style.animation =
+"twinkle " +
+(Math.random()*4+2) +
+"s infinite";
+
+document.body.appendChild(
+star
+);
+
+}
+/* PETALOS */
+
+setInterval(() => {
+
+const petal = document.createElement("div");
+
+petal.className = "petal";
+
+petal.innerHTML = "🌼";
+
+petal.style.left = Math.random() * 100 + "vw";
+
+petal.style.animationDuration =
+(Math.random() * 5 + 5) + "s";
+
+document.body.appendChild(petal);
+
+setTimeout(() => {
+petal.remove();
+}, 10000);
+
+}, 400);
+/* LUCIERNAGAS */
+
+for(let i=0;i<40;i++){
+
+const firefly =
+document.createElement("div");
+
+firefly.className =
+"firefly";
+
+firefly.style.left =
+Math.random()*100+"vw";
+
+firefly.style.top =
+(Math.random()*45+40)+"vh";
+
+firefly.style.animationDelay =
+Math.random()*5+"s";
+
+document.body.appendChild(
+firefly
+);
+
+}
+
+/* CORAZONES */
+
+function explosion(x,y){
+
+for(let i=0;i<100;i++){
+
+const heart=
+document.createElement("div");
+
+heart.className=
+"heart";
+
+const corazones = [
+"💖",
+"💗",
+"💕",
+"💞",
+"💓"
+];
+
+heart.innerHTML =
+corazones[
+Math.floor(
+Math.random() * corazones.length
+)];
+
+heart.style.left=
+x+"px";
+
+heart.style.top=
+y+"px";
+
+heart.style.setProperty(
+"--x",
+(Math.random()*800-400)
++"px"
+);
+
+heart.style.setProperty(
+"--y",
+(Math.random()*800-400)
++"px"
+);
+
+document.body.appendChild(
+heart
+);
+
+setTimeout(()=>{
+
+heart.remove();
+
+},2000);
+
+}
+
+}
+
+
+document.addEventListener(
+"click",
+e=>{
+
+explosion(
+e.clientX,
+e.clientY
+);
+
+}
+);
+
+</script>
+<button id="musicBtn">🎵 Música</button>
+
+<audio id="bgMusic" loop>
+    <source src="audio/StillWithYou.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+
+const music = document.getElementById("bgMusic");
+const musicBtn = document.getElementById("musicBtn");
+
+musicBtn.addEventListener("click", () => {
+
+    music.play();
+
+    musicBtn.innerHTML = "🎶 Reproduciendo";
+
+});
+
+document.addEventListener("click", () => {
+
+    music.play();
+
+}, { once: true });
+
+</script>
+
+
+</body>
+
+</html>
